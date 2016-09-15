@@ -60,7 +60,8 @@ def main():
 		page += 1
 	wb = Workbook()
 	ws1 = wb.active
-	ws1.title = lang_name
+	unicode_lang_name = unicode(lang_name, "utf-8")
+	ws1.title = unicode_lang_name
 	for row in info_result:
 		ws1.append(row)
 	wb.save('职位信息.xlsx')
